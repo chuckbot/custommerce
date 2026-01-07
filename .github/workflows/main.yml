@@ -1,0 +1,23 @@
+name: CI Workflow
+on: [push, pull_request]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install & Lint Backend
+        run: |
+          cd apps/backend
+          npm install
+          # npm run lint (cuando lo configures)
+          
+      - name: Install & Build Frontend
+        run: |
+          cd apps/frontend
+          npm install
+          npm run build

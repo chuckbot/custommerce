@@ -1,0 +1,13 @@
+# Dependencias
+node_modules/
+dist/
+.env
+
+# Docker
+.data/
+postgres_data/
+
+# Logs y Cache
+npm-debug.log*
+.eslintcache
+.DS_Store
